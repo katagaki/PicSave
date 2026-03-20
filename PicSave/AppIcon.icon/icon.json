@@ -1,15 +1,76 @@
 {
-  "fill" : "system-light",
+  "fill" : {
+    "automatic-gradient" : "srgb:0.82248,0.89156,1.00000,1.00000"
+  },
   "groups" : [
     {
+      "blur-material" : null,
       "layers" : [
         {
-          "image-name" : "PicSave.002.png",
-          "name" : "PicSave.002"
-        },
+          "image-name" : "PicSave.002 2.png",
+          "name" : "><"
+        }
+      ],
+      "name" : "><",
+      "shadow" : {
+        "kind" : "layer-color",
+        "opacity" : 1
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    },
+    {
+      "blur-material" : 0.5,
+      "layers" : [
         {
+          "fill-specializations" : [
+            {
+              "appearance" : "tinted",
+              "value" : {
+                "solid" : "extended-srgb:0.00000,0.53333,1.00000,1.00000"
+              }
+            }
+          ],
+          "image-name" : "PicSave.003 2.png",
+          "name" : "1",
+          "opacity" : 1
+        }
+      ],
+      "name" : "1",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    },
+    {
+      "blur-material" : 0.5,
+      "layers" : [
+        {
+          "fill-specializations" : [
+            {
+              "appearance" : "tinted",
+              "value" : {
+                "solid" : "extended-srgb:0.00000,0.53333,1.00000,1.00000"
+              }
+            }
+          ],
           "image-name" : "PicSave.003.png",
-          "name" : "PicSave.003",
+          "name" : "2",
+          "opacity-specializations" : [
+            {
+              "value" : 1
+            },
+            {
+              "appearance" : "tinted",
+              "value" : 0.9
+            }
+          ],
           "position" : {
             "scale" : 1,
             "translation-in-points" : [
@@ -17,25 +78,106 @@
               0
             ]
           }
-        },
-        {
-          "image-name" : "PicSave.004.png",
-          "name" : "PicSave.004"
-        },
-        {
-          "image-name" : "PicSave.005.png",
-          "name" : "PicSave.005"
-        },
-        {
-          "image-name" : "PicSave.006.png",
-          "name" : "PicSave.006"
-        },
-        {
-          "image-name" : "PicSave.007.png",
-          "name" : "PicSave.007"
         }
       ],
-      "name" : "Bookmarks",
+      "name" : "2",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.7
+      }
+    },
+    {
+      "layers" : [
+        {
+          "fill-specializations" : [
+            {
+              "appearance" : "tinted",
+              "value" : {
+                "solid" : "extended-srgb:0.00000,0.53333,1.00000,1.00000"
+              }
+            }
+          ],
+          "image-name" : "PicSave.004.png",
+          "name" : "3",
+          "opacity-specializations" : [
+            {
+              "value" : 1
+            },
+            {
+              "appearance" : "tinted",
+              "value" : 0.8
+            }
+          ]
+        },
+        {
+          "fill-specializations" : [
+            {
+              "appearance" : "tinted",
+              "value" : {
+                "solid" : "extended-srgb:0.00000,0.53333,1.00000,1.00000"
+              }
+            }
+          ],
+          "image-name" : "PicSave.005.png",
+          "name" : "4",
+          "opacity-specializations" : [
+            {
+              "value" : 1
+            },
+            {
+              "appearance" : "tinted",
+              "value" : 0.7
+            }
+          ]
+        },
+        {
+          "fill-specializations" : [
+            {
+              "appearance" : "tinted",
+              "value" : {
+                "solid" : "extended-srgb:0.00000,0.53333,1.00000,1.00000"
+              }
+            }
+          ],
+          "image-name" : "PicSave.006.png",
+          "name" : "5",
+          "opacity-specializations" : [
+            {
+              "value" : 1
+            },
+            {
+              "appearance" : "tinted",
+              "value" : 0.6
+            }
+          ]
+        },
+        {
+          "fill-specializations" : [
+            {
+              "appearance" : "tinted",
+              "value" : {
+                "solid" : "extended-srgb:0.00000,0.53333,1.00000,1.00000"
+              }
+            }
+          ],
+          "image-name" : "PicSave.007.png",
+          "name" : "6",
+          "opacity-specializations" : [
+            {
+              "value" : 1
+            },
+            {
+              "appearance" : "tinted",
+              "value" : 0.5
+            }
+          ]
+        }
+      ],
+      "name" : "3-6",
       "shadow" : {
         "kind" : "neutral",
         "opacity" : 0.5
