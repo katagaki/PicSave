@@ -14,21 +14,24 @@ struct PixivLoginView: View {
         VStack(spacing: 0) {
             if isLoggingIn {
                 PixivWebView(onLoginComplete: handleLoginComplete)
+                    .ignoresSafeArea()
             } else {
                 VStack(spacing: 12) {
                     Image(systemName: "checkmark.circle.fill")
                         .font(.system(size: 48))
                         .foregroundStyle(.green)
-                    Text("Logged in successfully!")
+                    Text("Login.Success")
                         .font(.headline)
-                    Text("User ID: \(userId)")
+                    Text("Settings.Account.UserID \(userId)")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
+#if os(macOS)
         .frame(minWidth: 480, minHeight: 600)
+#endif
     }
 
     func handleLoginComplete(cookies: [HTTPCookie]) {
@@ -53,13 +56,13 @@ struct PixivLoginView: View {
     }
 }
 
-struct PixivWebView: NSViewRepresentable {
+struct PixivWebView: XPViewRepresentable {
 
     let loginURL = URL(string: "https://accounts.pixiv.net/login?return_to=https%3A%2F%2Fwww.pixiv.net%2F")!
     let successHost = "www.pixiv.net"
     var onLoginComplete: ([HTTPCookie]) -> Void
 
-    func makeNSView(context: Context) -> WKWebView {
+    private func createWebView(context: Context) -> WKWebView {
         let configuration = WKWebViewConfiguration()
         configuration.websiteDataStore = .default()
         let webView = WKWebView(frame: .zero, configuration: configuration)
@@ -68,7 +71,19 @@ struct PixivWebView: NSViewRepresentable {
         return webView
     }
 
+#if os(iOS)
+    func makeUIView(context: Context) -> WKWebView {
+        createWebView(context: context)
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {}
+#elseif os(macOS)
+    func makeNSView(context: Context) -> WKWebView {
+        createWebView(context: context)
+    }
+
     func updateNSView(_ nsView: WKWebView, context: Context) {}
+#endif
 
     func makeCoordinator() -> Coordinator {
         Coordinator(successHost: successHost, onLoginComplete: onLoginComplete)

@@ -5,13 +5,21 @@ struct CachedImageView: View {
     let urlString: String
     let cookie: String
 
-    @State private var image: NSImage?
+    @State private var image: XPImage?
     @State private var isLoading = false
+
+    private func imageView(_ xpImage: XPImage) -> Image {
+#if os(iOS)
+        Image(uiImage: xpImage)
+#elseif os(macOS)
+        Image(nsImage: xpImage)
+#endif
+    }
 
     var body: some View {
         Group {
             if let image {
-                Image(nsImage: image)
+                imageView(image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
             } else if isLoading {

@@ -1,12 +1,16 @@
-import AppKit
 import CryptoKit
 import Foundation
+#if os(iOS)
+import UIKit
+#elseif os(macOS)
+import AppKit
+#endif
 
 actor ImageCache {
 
     static let shared = ImageCache()
 
-    private var inMemoryCache: [String: NSImage] = [:]
+    private var inMemoryCache: [String: XPImage] = [:]
 
     private var cacheDirectory: URL {
         let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
@@ -23,7 +27,7 @@ actor ImageCache {
         return cacheDirectory.appendingPathComponent(filename)
     }
 
-    func image(for urlString: String, cookie: String) async -> NSImage? {
+    func image(for urlString: String, cookie: String) async -> XPImage? {
         // Check in-memory cache
         if let cached = inMemoryCache[urlString] {
             return cached
@@ -33,7 +37,8 @@ actor ImageCache {
 
         // Check disk cache
         if FileManager.default.fileExists(atPath: file.path),
-           let image = NSImage(contentsOf: file) {
+           let data = try? Data(contentsOf: file),
+           let image = XPImage(data: data) {
             inMemoryCache[urlString] = image
             return image
         }
@@ -53,7 +58,7 @@ actor ImageCache {
             let (data, response) = try await URLSession.shared.data(for: request)
             guard let httpResponse = response as? HTTPURLResponse,
                   httpResponse.statusCode == 200,
-                  let image = NSImage(data: data) else {
+                  let image = XPImage(data: data) else {
                 return nil
             }
             // Save to disk

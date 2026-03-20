@@ -61,11 +61,11 @@ enum PixivError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidURL:
-            return "Invalid URL"
+            return String(localized: "Error.InvalidURL")
         case .requestFailed:
-            return "Request failed"
+            return String(localized: "Error.RequestFailed")
         case .apiError(let message):
-            return "API error: \(message)"
+            return String(localized: "Error.APIError \(message)")
         }
     }
 }

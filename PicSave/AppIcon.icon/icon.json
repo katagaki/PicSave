@@ -1,9 +1,50 @@
 {
-  "fill" : {
-    "automatic-gradient" : "display-p3:0.25868,0.58035,0.95312,1.00000"
-  },
+  "fill" : "system-light",
   "groups" : [
-
+    {
+      "layers" : [
+        {
+          "image-name" : "PicSave.002.png",
+          "name" : "PicSave.002"
+        },
+        {
+          "image-name" : "PicSave.003.png",
+          "name" : "PicSave.003",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "image-name" : "PicSave.004.png",
+          "name" : "PicSave.004"
+        },
+        {
+          "image-name" : "PicSave.005.png",
+          "name" : "PicSave.005"
+        },
+        {
+          "image-name" : "PicSave.006.png",
+          "name" : "PicSave.006"
+        },
+        {
+          "image-name" : "PicSave.007.png",
+          "name" : "PicSave.007"
+        }
+      ],
+      "name" : "Bookmarks",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
   ],
   "supported-platforms" : {
     "circles" : [

@@ -1,4 +1,5 @@
 import SwiftUI
+import WebKit
 
 struct SettingsView: View {
 
@@ -13,23 +14,35 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
-            Section("Account") {
+            Section(String(localized: "Settings.Account")) {
                 if isLoggedIn {
                     HStack {
                         Image(systemName: "person.crop.circle.fill")
                             .font(.title2)
                             .foregroundStyle(.secondary)
-                        VStack(alignment: .leading) {
-                            Text("Logged in")
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Settings.Account.LoggedIn")
                                 .font(.headline)
-                            Text("User ID: \(userId)")
+                            Text("Settings.Account.UserID \(userId)")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
                         Spacer()
-                        Button("Log Out") {
+                        Button(String(localized: "Settings.Account.LogOut")) {
                             userId = ""
                             sessionCookie = ""
+                            let dataStore = WKWebsiteDataStore.default()
+                            dataStore.fetchDataRecords(
+                                ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()
+                            ) { records in
+                                let pixivRecords = records.filter {
+                                    $0.displayName.contains("pixiv")
+                                }
+                                dataStore.removeData(
+                                    ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(),
+                                    for: pixivRecords
+                                ) {}
+                            }
                         }
                     }
                 } else {
@@ -37,10 +50,10 @@ struct SettingsView: View {
                         Image(systemName: "person.crop.circle.badge.questionmark")
                             .font(.title2)
                             .foregroundStyle(.secondary)
-                        Text("Not logged in")
+                        Text("Settings.Account.NotLoggedIn")
                             .foregroundStyle(.secondary)
                         Spacer()
-                        Button("Log In with Pixiv") {
+                        Button(String(localized: "Settings.Account.LogIn")) {
                             isShowingLogin = true
                         }
                     }
@@ -48,10 +61,34 @@ struct SettingsView: View {
             }
         }
         .formStyle(.grouped)
+#if os(macOS)
         .frame(minWidth: 400, minHeight: 200)
-        .navigationTitle("Settings")
+#endif
+        .navigationTitle(String(localized: "Settings.Title"))
         .sheet(isPresented: $isShowingLogin) {
+#if os(iOS)
+            NavigationStack {
+                PixivLoginView()
+                    .navigationTitle(String(localized: "Login.Title"))
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItemGroup(placement: .topBarTrailing) {
+                            if #available(iOS 26.0, *) {
+                                Button(role: .close) {
+                                    isShowingLogin = false
+                                }
+                            } else {
+                                Button(String(localized: "Shared.Done")) {
+                                    isShowingLogin = false
+                                }
+                                .fontWeight(.semibold)
+                            }
+                        }
+                    }
+            }
+#else
             PixivLoginView()
+#endif
         }
     }
 }
