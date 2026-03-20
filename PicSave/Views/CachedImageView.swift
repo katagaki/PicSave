@@ -22,6 +22,7 @@ struct CachedImageView: View {
                 imageView(image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
+                    .transition(.opacity)
             } else if isLoading {
                 ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -40,7 +41,9 @@ struct CachedImageView: View {
             Task {
                 let loaded = await ImageCache.shared.image(for: urlString, cookie: cookie)
                 await MainActor.run {
-                    image = loaded
+                    withAnimation(.easeIn(duration: 0.3)) {
+                        image = loaded
+                    }
                     isLoading = false
                 }
             }
