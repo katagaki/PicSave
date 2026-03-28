@@ -6,7 +6,7 @@ class BookmarkCache {
 
     private var cacheDirectory: URL {
         let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        let cacheDir = appSupport.appendingPathComponent("PicSave", isDirectory: true)
+        let cacheDir = appSupport.appendingPathComponent("Tiles", isDirectory: true)
         try? FileManager.default.createDirectory(at: cacheDir, withIntermediateDirectories: true)
         return cacheDir
     }
