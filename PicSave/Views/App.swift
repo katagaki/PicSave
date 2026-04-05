@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct PicSaveApp: App {
+struct TilesApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

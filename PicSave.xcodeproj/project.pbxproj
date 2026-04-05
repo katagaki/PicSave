@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		E4C1903B2F6D4BF400580DF3 /* PicSave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicSave.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C1903B2F6D4BF400580DF3 /* Tiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E4C190852F6D678F00580DF3 /* Exceptions for "PicSave" folder in "PicSave" target */ = {
+		E4C190852F6D678F00580DF3 /* Exceptions for "PicSave" folder in "Tiles" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = E4C1903A2F6D4BF400580DF3 /* PicSave */;
+			target = E4C1903A2F6D4BF400580DF3 /* Tiles */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -24,7 +24,7 @@
 		E4C1903D2F6D4BF400580DF3 /* PicSave */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				E4C190852F6D678F00580DF3 /* Exceptions for "PicSave" folder in "PicSave" target */,
+				E4C190852F6D678F00580DF3 /* Exceptions for "PicSave" folder in "Tiles" target */,
 			);
 			path = PicSave;
 			sourceTree = "<group>";
@@ -53,7 +53,7 @@
 		E4C1903C2F6D4BF400580DF3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4C1903B2F6D4BF400580DF3 /* PicSave.app */,
+				E4C1903B2F6D4BF400580DF3 /* Tiles.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,9 +61,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4C1903A2F6D4BF400580DF3 /* PicSave */ = {
+		E4C1903A2F6D4BF400580DF3 /* Tiles */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4C190462F6D4BF600580DF3 /* Build configuration list for PBXNativeTarget "PicSave" */;
+			buildConfigurationList = E4C190462F6D4BF600580DF3 /* Build configuration list for PBXNativeTarget "Tiles" */;
 			buildPhases = (
 				E4C190372F6D4BF400580DF3 /* Sources */,
 				E4C190382F6D4BF400580DF3 /* Frameworks */,
@@ -76,11 +76,11 @@
 			fileSystemSynchronizedGroups = (
 				E4C1903D2F6D4BF400580DF3 /* PicSave */,
 			);
-			name = PicSave;
+			name = Tiles;
 			packageProductDependencies = (
 			);
-			productName = PicSave;
-			productReference = E4C1903B2F6D4BF400580DF3 /* PicSave.app */;
+			productName = Tiles;
+			productReference = E4C1903B2F6D4BF400580DF3 /* Tiles.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -116,7 +116,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E4C1903A2F6D4BF400580DF3 /* PicSave */,
+				E4C1903A2F6D4BF400580DF3 /* Tiles */,
 			);
 		};
 /* End PBXProject section */
@@ -378,7 +378,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4C190462F6D4BF600580DF3 /* Build configuration list for PBXNativeTarget "PicSave" */ = {
+		E4C190462F6D4BF600580DF3 /* Build configuration list for PBXNativeTarget "Tiles" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4C190472F6D4BF600580DF3 /* Debug */,
