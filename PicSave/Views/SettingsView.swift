@@ -14,21 +14,21 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
-            Section(String(localized: "Settings.Account")) {
+            Section(String(localized: "More.Account")) {
                 if isLoggedIn {
                     HStack {
                         Image(systemName: "person.crop.circle.fill")
                             .font(.title2)
                             .foregroundStyle(.secondary)
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("Settings.Account.LoggedIn")
+                            Text("More.Account.LoggedIn")
                                 .font(.headline)
-                            Text("Settings.Account.UserID \(userId)")
+                            Text("More.Account.UserID \(userId)")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
                         Spacer()
-                        Button(String(localized: "Settings.Account.LogOut")) {
+                        Button(String(localized: "More.Account.LogOut")) {
                             userId = ""
                             sessionCookie = ""
                             let dataStore = WKWebsiteDataStore.default()
@@ -50,21 +50,32 @@ struct SettingsView: View {
                         Image(systemName: "person.crop.circle.badge.questionmark")
                             .font(.title2)
                             .foregroundStyle(.secondary)
-                        Text("Settings.Account.NotLoggedIn")
+                        Text("More.Account.NotLoggedIn")
                             .foregroundStyle(.secondary)
                         Spacer()
-                        Button(String(localized: "Settings.Account.LogIn")) {
+                        Button(String(localized: "More.Account.LogIn")) {
                             isShowingLogin = true
                         }
                     }
                 }
+            }
+            Section {
+                Link(destination: URL(string: "https://github.com/katagaki/PicSave")!) {
+                    HStack {
+                        Text(String(localized: "More.GitHub"))
+                        Spacer()
+                        Text("katagaki/PicSave")
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .tint(.primary)
             }
         }
         .formStyle(.grouped)
 #if os(macOS)
         .frame(minWidth: 400, minHeight: 200)
 #endif
-        .navigationTitle(String(localized: "Settings.Title"))
+        .navigationTitle(String(localized: "More.Title"))
         .sheet(isPresented: $isShowingLogin) {
 #if os(iOS)
             NavigationStack {

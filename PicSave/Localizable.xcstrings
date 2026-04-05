@@ -979,7 +979,7 @@
         }
       }
     },
-    "Settings.Account" : {
+    "More.Account" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1014,7 +1014,7 @@
         }
       }
     },
-    "Settings.Account.LoggedIn" : {
+    "More.Account.LoggedIn" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1049,7 +1049,7 @@
         }
       }
     },
-    "Settings.Account.LogIn" : {
+    "More.Account.LogIn" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1084,7 +1084,7 @@
         }
       }
     },
-    "Settings.Account.LogOut" : {
+    "More.Account.LogOut" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1119,7 +1119,7 @@
         }
       }
     },
-    "Settings.Account.NotLoggedIn" : {
+    "More.Account.NotLoggedIn" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1154,7 +1154,7 @@
         }
       }
     },
-    "Settings.Account.UserID" : {
+    "More.Account.UserID" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1189,7 +1189,7 @@
         }
       }
     },
-    "Settings.Account.UserID %@" : {
+    "More.Account.UserID %@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1223,37 +1223,72 @@
         }
       }
     },
-    "Settings.Title" : {
+    "More.GitHub" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Settings"
+            "value" : "Source Code"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "設定"
+            "value" : "ソースコード"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "설정"
+            "value" : "소스 코드"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "设置"
+            "value" : "源代码"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "設定"
+            "value" : "原始碼"
+          }
+        }
+      }
+    },
+    "More.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "その他"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "더 보기"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更多"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更多"
           }
         }
       }

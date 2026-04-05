@@ -57,6 +57,7 @@ struct BookmarkGridItem: View {
                     openURL(url)
                 }
             }
+            Divider()
             Button(String(localized: "Bookmark.CopyLink")) {
                 let link = "https://www.pixiv.net/artworks/\(work.id.value)"
 #if os(iOS)

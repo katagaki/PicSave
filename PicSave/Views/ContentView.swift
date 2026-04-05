@@ -68,7 +68,7 @@ struct ContentView: View {
                         Button {
                             isShowingSettings = true
                         } label: {
-                            Label("Settings.Title", systemImage: "ellipsis")
+                            Label("More.Title", systemImage: "ellipsis")
                         }
                     }
                 }
@@ -105,7 +105,7 @@ struct ContentView: View {
                 NavigationLink {
                     SettingsView()
                 } label: {
-                    Label("Settings.Title", systemImage: "gearshape")
+                    Label("More.Title", systemImage: "gearshape")
                 }
             }
             .navigationSplitViewColumnWidth(min: 180, ideal: 200)
@@ -326,6 +326,15 @@ struct ContentView: View {
         errorMessage = nil
         var allWorks: [PixivWork] = []
 
+        #if os(iOS)
+        UIApplication.shared.isIdleTimerDisabled = true
+        #endif
+        defer {
+            #if os(iOS)
+            UIApplication.shared.isIdleTimerDisabled = false
+            #endif
+        }
+
         do {
             let firstResponse = try await PixivService.shared.fetchBookmarks(
                 userId: userId,
@@ -340,7 +349,7 @@ struct ContentView: View {
 
             var offset = pageSize
             while offset < total {
-                try await Task.sleep(for: .seconds(1))
+                try await Task.sleep(for: .milliseconds(200))
                 let response = try await PixivService.shared.fetchBookmarks(
                     userId: userId,
                     cookie: sessionCookie,
